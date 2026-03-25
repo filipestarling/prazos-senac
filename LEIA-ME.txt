@@ -1,0 +1,38 @@
+============================================================
+  APP DE PRAZOS MOODLE SENAC
+  Desenvolvido por Filipe Franca — 1º Semestre 2026
+============================================================
+
+COMO INSTALAR E RODAR
+─────────────────────
+1. Certifique-se de ter o Python instalado (python.org)
+2. Abra a pasta "app_prazos" no Explorador de Arquivos
+3. Dê dois cliques em "iniciar.bat"
+4. O navegador vai abrir automaticamente em http://localhost:5000
+
+COMO CADASTRAR
+──────────────
+1. No app, preencha seu nome
+2. Informe seu Telegram Chat ID:
+   - Mande qualquer mensagem para @MoodleSenacBot no Telegram
+   - Acesse: https://api.telegram.org/bot8712010743:AAHuT7LNZ2EUnGyj71f3oWN6VCJi2QlZJvI/getUpdates
+   - Copie o número que aparece em "chat":{"id": XXXXXXXX}
+3. Cole a URL do seu calendário Moodle:
+   - No Moodle: Calendário → Exportar calendário → "Obter URL da assinatura"
+   - Copie a URL completa (começa com https://moodle.df.senac.br/calendar/export...)
+
+COMO FUNCIONA
+─────────────
+- Todo dia às 8h o app verifica os prazos de todos os cadastrados
+- Se houver prazo vencendo em até 3 dias, envia alerta no Telegram
+- Você pode sincronizar manualmente a qualquer hora pelo dashboard
+- O computador precisa estar ligado para as notificações funcionarem
+
+COMPARTILHANDO COM COLEGAS
+──────────────────────────
+- Envie a pasta "app_prazos" para seus colegas (WhatsApp, Drive, etc.)
+- Eles precisam ter o Python instalado
+- Cada um roda o app no próprio computador e se cadastra
+- Todos recebem notificações no próprio Telegram
+
+============================================================

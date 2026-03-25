@@ -1,0 +1,4 @@
+flask
+icalendar
+apscheduler
+requests

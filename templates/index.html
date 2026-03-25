@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6">
+
+    <div class="text-center mb-4">
+      <h2 class="fw-bold text-dark">📚 Prazos do Moodle SENAC</h2>
+      <p class="text-muted">Receba alertas no Telegram quando suas entregas estiverem chegando.</p>
+      {% if total > 0 %}
+      <span class="badge bg-success fs-6">{{ total }} aluno(s) cadastrado(s)</span>
+      {% endif %}
+    </div>
+
+    <div class="card p-4">
+      <h5 class="mb-3 fw-bold">Cadastrar-se</h5>
+      <form action="/cadastrar" method="POST">
+
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Seu nome</label>
+          <input type="text" name="nome" class="form-control" placeholder="Ex: Filipe Franca" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Telegram Chat ID</label>
+          <input type="text" name="chat_id" class="form-control" placeholder="Ex: 822623479" required>
+          <div class="form-text">
+            <i class="bi bi-info-circle"></i>
+            Mande <b>qualquer mensagem</b> para o bot
+            <a href="https://t.me/MoodleSenacBot" target="_blank">@MoodleSenacBot</a>
+            e acesse
+            <a href="https://api.telegram.org/bot8712010743:AAHuT7LNZ2EUnGyj71f3oWN6VCJi2QlZJvI/getUpdates" target="_blank">este link</a>
+            para ver seu Chat ID.
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label class="form-label fw-semibold">URL do Calendário Moodle (iCal)</label>
+          <input type="url" name="ical_url" class="form-control" placeholder="https://moodle.df.senac.br/calendar/export_execute.php?..." required>
+          <div class="form-text">
+            <i class="bi bi-info-circle"></i>
+            No Moodle: <b>Calendário → Exportar calendário → Obter URL da assinatura</b>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">
+          <i class="bi bi-bell-fill me-2"></i>Ativar notificações
+        </button>
+      </form>
+    </div>
+
+    <div class="card mt-3 p-3 bg-light">
+      <p class="mb-1 fw-semibold text-muted small">Já cadastrado?</p>
+      <form action="/dashboard/0" method="GET" class="d-flex gap-2">
+        <input type="number" id="uid_input" class="form-control form-control-sm" placeholder="Seu ID de usuário">
+        <button type="button" class="btn btn-outline-secondary btn-sm"
+          onclick="window.location='/dashboard/'+document.getElementById('uid_input').value">
+          Entrar
+        </button>
+      </form>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
